@@ -2,18 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Image Cropper</title>
+    <title>Image Editor</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: hsla(213, 97%, 75%, 0.8);
+        }
+        .content-box {
+            background-color: hsla(0, 0%, 100%, 0.8);
+            padding: 10px 20px 20px 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+            text-align: center;
+        }
         #canvas {
             border: 1px solid black;
+            margin-top: 20px;
+        }
+        #resizeButton {
+            display: none;
+            margin-top: 24px;
+            cursor: pointer;
+        }
+        input[type="file"] {
             margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Image Cropper</h1>
-    <input type="file" id="fileInput" accept="image/*">
-    <canvas id="canvas"></canvas>
+    <div class="content-box">
+        <h1>Image Editor</h1>
+        <button id="resizeButton" style="display: none;">Resize</button>
+        <input type="file" id="fileInput" accept="image/*">
+        <canvas id="canvas"></canvas>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
